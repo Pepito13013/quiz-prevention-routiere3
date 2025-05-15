@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz Prévention Routière - Entretien Véhicules</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: 2rem auto; padding: 1rem; background: #f4f6f8; }
+  h1 { text-align: center; color: #2c3e50; }
+  .question { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 0 8px #ccc; }
+  .answers label { display: block; margin: 0.5rem 0; cursor: pointer; }
+  button { background: #2980b9; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 5px; cursor: pointer; }
+  button:hover { background: #3498db; }
+  #result { margin-top: 2rem; background: #dff0d8; padding: 1rem; border-radius: 8px; display: none; }
+  .explanation { font-style: italic; color: #555; margin-top: 0.5rem; }
+</style>
+</head>
+<body>
+
+<h1>Quiz Prévention Routière : Entretien Voitures & Motos</h1>
+
+<form id="quizForm">
+
+  <div class="question" data-q="1">
+    <p><strong>1. Pourquoi est-il important de vérifier régulièrement la pression des pneus ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q1" value="a" /> a) Pour améliorer la tenue de route et la sécurité</label>
+      <label><input type="radio" name="q1" value="b" /> b) Pour consommer plus de carburant</label>
+      <label><input type="radio" name="q1" value="c" /> c) Pour éviter de devoir faire la vidange</label>
+      <label><input type="radio" name="q1" value="d" /> d) Pour améliorer l’apparence du véhicule</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="2">
+    <p><strong>2. À quelle fréquence doit-on changer l’huile moteur ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q2" value="a" /> a) Tous les 5 000 à 10 000 km selon le type d’huile et véhicule</label>
+      <label><input type="radio" name="q2" value="b" /> b) Tous les 50 000 km</label>
+      <label><input type="radio" name="q2" value="c" /> c) Une fois par an, quel que soit le kilométrage</label>
+      <label><input type="radio" name="q2" value="d" /> d) Seulement quand le moteur fait un bruit bizarre</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="3">
+    <p><strong>3. Quelle est la conséquence d’un freinage mal entretenu sur une moto ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q3" value="a" /> a) Risque accru d’accident</label>
+      <label><input type="radio" name="q3" value="b" /> b) Consommation réduite</label>
+      <label><input type="radio" name="q3" value="c" /> c) Amélioration de la vitesse maximale</label>
+      <label><input type="radio" name="q3" value="d" /> d) Meilleure adhérence sur sol mouillé</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="4">
+    <p><strong>4. Quel est le rôle du liquide de refroidissement dans un moteur ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q4" value="a" /> a) Empêcher la surchauffe du moteur</label>
+      <label><input type="radio" name="q4" value="b" /> b) Lubrifier les freins</label>
+      <label><input type="radio" name="q4" value="c" /> c) Nettoyer les phares</label>
+      <label><input type="radio" name="q4" value="d" /> d) Améliorer la consommation d’essence</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="5">
+    <p><strong>5. Quand doit-on vérifier l’état des plaquettes de frein ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q5" value="a" /> a) Lors de chaque vidange ou au moins tous les 20 000 km</label>
+      <label><input type="radio" name="q5" value="b" /> b) Seulement avant un long trajet</label>
+      <label><input type="radio" name="q5" value="c" /> c) Tous les 100 000 km</label>
+      <label><input type="radio" name="q5" value="d" /> d) Une fois par an, en hiver uniquement</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="6">
+    <p><strong>6. Pourquoi est-il important de vérifier l’éclairage (phares, clignotants) de votre véhicule avant de prendre la route ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q6" value="a" /> a) Pour garantir une bonne visibilité et signaler ses intentions aux autres usagers</label>
+      <label><input type="radio" name="q6" value="b" /> b) Pour ne pas user la batterie</label>
+      <label><input type="radio" name="q6" value="c" /> c) Pour économiser le carburant</label>
+      <label><input type="radio" name="q6" value="d" /> d) Ce n’est pas nécessaire sur route sèche</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="7">
+    <p><strong>7. Quelle est la bonne pratique concernant la chaîne d’une moto ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q7" value="a" /> a) La nettoyer et la graisser régulièrement</label>
+      <label><input type="radio" name="q7" value="b" /> b) La remplacer tous les 5 000 km sans vérification</label>
+      <label><input type="radio" name="q7" value="c" /> c) Ne jamais la toucher, elle est auto-entretenue</label>
+      <label><input type="radio" name="q7" value="d" /> d) La détendre au maximum pour éviter l’usure</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="8">
+    <p><strong>8. Que signifie un témoin lumineux rouge sur le tableau de bord ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q8" value="a" /> a) Un problème sérieux qui nécessite un arrêt immédiat</label>
+      <label><input type="radio" name="q8" value="b" /> b) Rien d’important, juste un rappel</label>
+      <label><input type="radio" name="q8" value="c" /> c) Un message publicitaire</label>
+      <label><input type="radio" name="q8" value="d" /> d) Une panne mineure pouvant attendre</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="9">
+    <p><strong>9. Pourquoi est-il recommandé de vérifier le niveau de liquide de frein régulièrement ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q9" value="a" /> a) Parce qu’un niveau trop bas peut compromettre l’efficacité du freinage</label>
+      <label><input type="radio" name="q9" value="b" /> b) Pour éviter que le moteur chauffe</label>
+      <label><input type="radio" name="q9" value="c" /> c) Pour augmenter la puissance du moteur</label>
+      <label><input type="radio" name="q9" value="d" /> d) Pour améliorer la direction assistée</label>
+    </div>
+  </div>
+
+  <div class="question" data-q="10">
+    <p><strong>10. Quel est l’impact d’un filtre à air encrassé ?</strong></p>
+    <div class="answers">
+      <label><input type="radio" name="q10" value="a" /> a) Réduction des performances du moteur et augmentation de la consommation</label>
+      <label><input type="radio" name="q10" value="b" /> b) Augmentation de la puissance instantanée</label>
+      <label><input type="radio" name="q10" value="c" /> c) Amélioration de la tenue de route</label>
+      <label><input type="radio" name="q10" value="d" /> d) Aucun impact</label>
+    </div>
+  </div>
+
+  <button type="button" id="submitBtn">Voir les résultats</button>
+
+</form>
+
+<div id="result"></div>
+
+<script>
+  const answersKey = {
+    q1: 'a',
+    q2: 'a',
+    q3: 'a',
+    q4: 'a',
+    q5: 'a',
+    q6: 'a',
+    q7: 'a',
+    q8: 'a',
+    q9: 'a',
+    q10: 'a'
+  };
+
+  const explanations = {
+    q1: "Une pression correcte garantit une meilleure adhérence et réduit le risque d’accident.",
+    q2: "L’huile protège et lubrifie le moteur, son remplacement régulier est essentiel.",
+    q3: "Des freins usés ou mal réglés peuvent ne pas répondre correctement en urgence.",
+    q4: "Le liquide de refroidissement évacue la chaleur pour éviter que le moteur ne chauffe trop.",
+    q5: "Les plaquettes s’usent et doivent être contrôlées régulièrement pour rester efficaces.",
+    q6: "Un éclairage fonctionnel est crucial pour la sécurité, surtout la nuit ou par mauvais temps.",
+    q7: "Nettoyer et graisser la chaîne prolonge sa durée de vie et évite les risques de rupture.",
+    q8: "Un témoin rouge signale souvent un défaut critique pouvant endommager le véhicule ou mettre en danger.",
+    q9: "Un niveau de liquide trop bas peut entraîner une perte totale ou partielle de freinage.",
+    q10: "Un filtre sale empêche l’air de bien circuler, ce qui pénalise le moteur."
+  };
+
+  document.getElementById('submitBtn').addEventListener('click', () => {
+    const form = document.getElementById('quizForm');
+    let score = 0;
+    let total = Object.keys(answersKey).length;
+    let resultHTML = `<h2>Résultats</h2>`;
+
+    for (let q in answersKey) {
+      const userAnswer = form[q].value;
+      const correctAnswer = answersKey[q];
+      const isCorrect = userAnswer === correctAnswer;
+      if (isCorrect) score++;
+      resultHTML += `
+        <div class="question-result">
+          <strong>Question ${q.slice(1)} :</strong> ${isCorrect ? "✅ Correct" : "❌ Faux"}<br/>
+          <em>Explication :</em> ${explanations[q]}
+        </div><br/>
+      `;
+    }
+    resultHTML += `<p><strong>Score final : ${score} / ${total}</strong></p>`;
+    document.getElementById('result').innerHTML = resultHTML;
+    document.getElementById('result').style.display = 'block';
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+</script>
+
+</body>
+</html>
